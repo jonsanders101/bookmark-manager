@@ -4,12 +4,12 @@ I want to access a list of bookmarked pages
 ```
 
 ```As a user
-So that save webpages for future reference
-I want be able to add new webpages to a bookmark manager
+So that I can save webpages for future reference
+I want be able to create bookmarks with the webpages address and title to a bookmark manager
 ```
 
 ```As a user
-So that I can organise my webpages
+So that I can organise my saved webpages
 I want to be able to assign tags to my bookmarks
 ```
 
