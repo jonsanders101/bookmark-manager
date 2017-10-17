@@ -1,14 +1,10 @@
-# frozen_string_literal: true
+# require 'rubygems'
+# require 'data_mapper'
+# require 'dm-postgres-adapter'
 
-source "https://rubygems.org"
-
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+source 'https://rubygems.org'
 
 ruby '2.4.2'
-
-require 'rubygems'
-require 'data_mapper'
-require 'dm-postgres-adapter'
 
 gem 'rake'
 gem 'sinatra'
