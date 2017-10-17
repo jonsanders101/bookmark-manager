@@ -13,6 +13,24 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require './app/models/link'
+require 'capybara/rspec'
+require File.join(File.dirname(__FILE__), '..', '/app/bookmark_manager_app.rb')
+require 'simplecov'
+require 'simplecov-console'
+
+
+ENV['RACK_ENV'] = 'test'
+
+Capybara.app = BookmarkManager
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
