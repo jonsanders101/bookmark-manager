@@ -13,6 +13,8 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+ENV['RACK_ENV'] = 'test'
+
 require './app/models/link'
 require 'capybara/rspec'
 require 'database_cleaner'
@@ -21,7 +23,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 
-ENV['RACK_ENV'] = 'test'
+
 
 Capybara.app = BookmarkManager
 

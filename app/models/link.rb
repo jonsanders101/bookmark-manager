@@ -16,7 +16,7 @@ end
 #   :url => "First bookmark link"
 # )
 #Link our model with our database
-DataMapper.setup(:default, "postgres://localhost/bookmark_manager_test")
+DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
 #After we have set up a resource - checks it for validity
 DataMapper.finalize
 #Migrates data to database
