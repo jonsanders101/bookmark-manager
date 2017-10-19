@@ -15,7 +15,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 ENV['RACK_ENV'] = 'test'
 
-require './app/models/link'
+#require './app/models/link' #why is this here?
 require 'capybara/rspec'
 require 'database_cleaner'
 require File.join(File.dirname(__FILE__), '..', '/app/bookmark_manager_app.rb')
