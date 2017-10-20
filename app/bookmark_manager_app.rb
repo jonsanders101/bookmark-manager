@@ -28,6 +28,13 @@ post '/links' do
 redirect '/links'
 end
 
+get "/tags/:name" do
+#@links = LinkTag.all(tag_id: Tag.first(name: params[:name]).id).map(&:link_id).map {|id| Link.first(id: id)}
+tag = Tag.first(name: params[:name])
+@links = tag ? tag.links : []
+erb :'tag/filter'
+end
+
 run! if app_file == $0
 
 end

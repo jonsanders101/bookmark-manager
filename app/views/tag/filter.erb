@@ -1,0 +1,11 @@
+<%= p "is filter view rendered?" %>
+
+Links with the <%=@taggy%> tag <br>
+<ul>
+<% @links.each do |link| %>
+<li>
+Title: <%= link.title %><br>
+URL:   <%= link.url   %><br>
+</li>
+<% end %>
+</ul>
