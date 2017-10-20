@@ -11,4 +11,3 @@ require './app/models/tag.rb'
 
 DataMapper.finalize
 #Migrates data to database
-DataMapper.auto_upgrade!
