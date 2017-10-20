@@ -21,18 +21,20 @@ post '/links' do
   link = Link.create(
     title: params[:Name],
     url: params[:URL])
-  tag = Tag.first_or_create(
-    name: params[:Tags])
-    link.tags << tag
+
+params[:Tags].split(', ').each do |tag|
+    link.tags << Tag.first_or_create(name: tag)
     link.save
+  end
 redirect '/links'
 end
 
 get "/tags/:name" do
-#@links = LinkTag.all(tag_id: Tag.first(name: params[:name]).id).map(&:link_id).map {|id| Link.first(id: id)}
-tag = Tag.first(name: params[:name])
-@links = tag ? tag.links : []
-erb :'tag/filter'
+  @tag_filter = params[:name]
+  #Keep this nonsense for reference: @links = LinkTag.all(tag_id: Tag.first(name: params[:name]).id).map(&:link_id).map {|id| Link.first(id: id)}
+  tag = Tag.first(name: @tag_filter)
+  @links = tag ? tag.links : []
+  erb :'tag/filter'
 end
 
 run! if app_file == $0
