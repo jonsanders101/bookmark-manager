@@ -22,9 +22,6 @@ require File.join(File.dirname(__FILE__), '..', '/app/bookmark_manager_app.rb')
 require 'simplecov'
 require 'simplecov-console'
 
-
-
-
 Capybara.app = BookmarkManager
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

@@ -9,6 +9,11 @@ class BookmarkManager < Sinatra::Base
 enable :sessions
 
 get '/links' do
+
+  @user_email = session[:user_id] ? User.get(session[:user_id]).email : "stranger"
+  p "User email:"
+  p @user_email
+  # @user_email = User.first.empty? ? User.first.email : "stranger!"
   @links = Link.all
   erb :links
 end
@@ -35,6 +40,16 @@ get "/tags/:name" do
   tag = Tag.first(name: @tag_filter)
   @links = tag ? tag.links : []
   erb :'tag/filter'
+end
+
+get '/signup' do
+  erb :signup
+end
+
+post '/users' do
+  user = User.create(email: params[:email], password: params[:password])
+  session[:user_id] = user.id
+  redirect '/links'
 end
 
 run! if app_file == $0

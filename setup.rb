@@ -7,7 +7,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark
 
 require './app/models/link.rb'
 require './app/models/tag.rb'
-
+require './app/models/user.rb'
 
 DataMapper.finalize
 #Migrates data to database
