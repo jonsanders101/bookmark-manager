@@ -10,4 +10,3 @@ require './app/models/tag.rb'
 require './app/models/user.rb'
 
 DataMapper.finalize
-#Migrates data to database
