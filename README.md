@@ -17,6 +17,7 @@ This bookmark manager represents work produced in week four of Makers Academy. W
 
 ## Directory Structure
 
+```
 |-- bookmark-manager
     |-- .rspec
     |-- Gemfile
@@ -53,6 +54,7 @@ This bookmark manager represents work produced in week four of Makers Academy. W
             |-- creating_links_spec.rb
             |-- signup_spec.rb
             |-- tag_filtering_spec.rb
+```
 
 ## Instructions
 
